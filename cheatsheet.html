@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="cheatsheet.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="logo.jpg" alt=""></span>
+        <div class="content" class="center" >
+            This is a HTML Cheatsheet
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+
+<li>Perfect Height and width for a webpage</li>
+<pre class="language-html"><code>
+height: 100vh;
+width: 100%;
+</code></pre><br><br>
+
+
+<li>Perfect Background Image</li>
+<pre class="language-html"><code>
+background-size: cover;
+background-position: center;
+</code></pre><br><br>
+
+
+<li>For Using Icons in your Website</li>
+<pre class="language-html"><code>
+&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+
+&lt;!-- Seach on google for font awesome icons and you can use those in input tag once you add this link  --&gt;
+</code></pre><br><br>
+
+
+<li>Initial Compulsory CSS</li>
+<pre class="language-html"><code>
+*{
+    margin: 0;
+    padding: 0;
+}
+</code></pre><br><br>
+
+
+<li>For bringing a line under the navigation bar items with transition</li>
+<pre class="language-html"><code>
+.classname ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.classname ul li:hover::after{
+    width: 100%;
+}
+</code></pre><br><br>
+
+
+<li>For bringing text in the center of Web Page</li>
+<pre class="language-html"><code>
+.classname{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%)    
+    text-align: center;
+    width: 90%;
+}
+</code></pre><br><br>
+
+
+<li>For Making a Button</li>
+<pre class="language-html"><code>
+.button{
+    background: transparent;
+    cursor: pointer;
+}
+
+button:hover{
+    background: red;
+    transition: 0.3s;
+}
+</code></pre><br><br>
+
+<li>Java Script for a Responsive Menu</li>
+<pre class="language-html"><code>
+&lt;script&gt;
+    var idname = document.getElementById("idname")
+
+    function showmenu(){
+        idname.style.right="0"
+    }
+
+    function hidemenu(){
+        idname.style.right="-200px"
+    }
+&lt;/script&gt;
+
+&lt;!-------------- Adding tags for Applying the above Js--------------&gt;
+
+Before ul 
+&lt;i class="fa fa-times" oneclick="hidemenu()"&gt;&lt;/i&gt;
+
+After /div which is after /ul 
+&lt;i class="fa fa-bars" oneclick="showmenu()"&gt;&lt;/i&gt;
+
+&lt;!-------------- Adding a link for Applying the above Js--------------&gt;
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+&lt;!-------------- Adding CSS for Applying the above Js--------------&gt;
+nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px){
+text-size: change;
+
+.classname{  &lt;!--the class name of the whole container of menu--&gt;
+    position: absolute;
+    height: 100vh;
+    width: 200px;
+    top: 0%;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+nav .fa{
+    display:block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.classname ul{
+    padding: 30px;
+}
+    }
+</code></pre><br><br>
+
+
+<li>Creating Good Boxes</li>
+<pre class="language-html"><code>
+.classname{  &lt;!--This is selecting the whole container--&gt;
+    display: flex;
+    margin: 5%;
+    justify-content: space-between;
+}
+
+.classname{ &lt;!--This is selecting each box--&gt;
+    flex-basis: 31%;
+    box-sizing: border-box;
+    padding: 20px 12px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+&lt;!--------------For making these boxes responsive----------------&gt;
+
+@media(max-width: 700px){
+.classname{ &lt;!--This is selecting the whole container--&gt;
+    flex-direction: column;
+}
+}
+
+&lt;!--------------Another type of boxes which are images----------------&gt;
+
+.classname{ &lt;!--The class name should be only of div of that particular box in which
+the image is there--&gt;
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.classname img{
+    width: 100%;
+    display: block;
+}
+
+</code></pre><br><br>
+
+
+<li>To bring any element at the center of its block</li>
+<pre class="language-html"><code>
+.classname{
+    width:  100%;
+    text-align: center;
+    margin: auto;
+}
+</code></pre><br><br>
+
+
+<li>To add a hovering layer on the image</li>
+<pre class="language-html"><code>
+    .classname{ &lt;!--This class name should be of the whole container/box--&gt;
+        cursor: pointer;
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+    
+    .classname:hover{
+        background: rgba(226, 0,0,0.7);
+    }
+</code></pre><br><br>
+
+
+<li>To add a Text at the bottom center of the image/box</li>
+<pre class="language-html"><code>
+    .classname h3{
+        width: 100%;
+        color: white;
+        font-size: 25px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0; .layer:hover h3{
+        bottom: 50%;
+        opacity: 0; &lt;!--This is the main reason for this effect--&gt;
+        transition: 0.5s;
+    }
+    }
+
+    &lt;!--------------For creating a hovering effect here----------------&gt;
+    
+    .classname:hover h3{ &lt;!--For creating hover effect we have to write h3 after hover--&gt;
+        bottom: 50%;
+        opacity: 1;
+    }
+
+</code></pre><br><br>
+
+
+<li>How to make the boxes created/any element Responsive</li>
+<pre class="language-html"><code>
+    @media(max-width: 700px){
+        .classname{ &lt;!--This class is a container in which all boxes lie--&gt;
+            flex-direction: column;
+        }
+    }
+
+</code></pre><br><br>
+
+<li>How to add stars to your website</li>
+<pre class="language-html"><code>
+
+Once you have added the font awesome link just paste
+
+&lt;i class="fa fa-star"&gt;&lt;/i&gt;   (one i = one full star)
+&lt;i class="fa fa-star-o"&gt;&lt;/i&gt; (one i = one empty star)
+&lt;i class="fa fa-star-half-o"&gt;&lt;/i&gt; (one i = one half star)
+
+</code></pre><br><br>
+
+<li>How to add footer icons to your website</li>
+<pre class="language-html"><code>
+
+Once you have added the font awesome link just paste
+
+&lt;div class="icons"&gt;
+    &lt;i class="fa fa-facebook"&gt;&lt;/i&gt;
+    &lt;i class="fa fa-twitter"&gt;&lt;/i&gt;
+    &lt;i class="fa fa-instagram"&gt;&lt;/i&gt;
+&lt;/div&gt;
+
+</code></pre><br><br>
+        </ol>
+    </div>
+</body>
+
+</html>
